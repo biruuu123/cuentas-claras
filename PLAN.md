@@ -21,7 +21,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 | T-04 | Dominio: repartos (RB-002, RB-003, RB-004) | T-03 | Alta | Tests CP-002 a CP-004 pasan | completada |
 | T-05 | Dominio: saldos (RB-005, RB-006) | T-04 | Alta | Tests CP-005, CP-006 pasan | completada |
 | T-06 | Dominio: plan de liquidación (RB-007) | T-05 | Alta | Tests CP-007 pasan | completada |
-| T-07 | Dominio: pagos y permisos (RB-008 a RB-011) | T-05 | Alta | Tests CP-008 a CP-011 pasan | pendiente |
+| T-07 | Dominio: pagos y permisos (RB-008 a RB-011) | T-05 | Alta | Tests CP-008 a CP-011 pasan | completada |
 | T-08 | Esquema Prisma y migración inicial | T-02 | Alta | Migración aplica en Neon | pendiente |
 | T-09 | Auth: registro y login (RB-013) | T-08 | Alta | Tests CP-013 pasan | pendiente |
 | T-10 | API grupos y miembros (RB-010, RB-012) | T-09 | Alta | Tests de integración pasan | pendiente |
