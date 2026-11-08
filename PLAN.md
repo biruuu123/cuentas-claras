@@ -18,7 +18,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 | T-01 | Documentación base (SPEC, AGENTS, PLAN, TESTING, README) | — | Alta | Documentos completos y versionados | completada |
 | T-02 | Estructura del backend y configuración de tests | T-01 | Alta | `npm test` ejecuta | completada |
 | T-03 | Dominio: dinero y validación de montos (RB-001) | T-02 | Alta | Tests CP-001 pasan | completada |
-| T-04 | Dominio: repartos (RB-002, RB-003, RB-004) | T-03 | Alta | Tests CP-002 a CP-004 pasan | pendiente |
+| T-04 | Dominio: repartos (RB-002, RB-003, RB-004) | T-03 | Alta | Tests CP-002 a CP-004 pasan | completada |
 | T-05 | Dominio: saldos (RB-005, RB-006) | T-04 | Alta | Tests CP-005, CP-006 pasan | pendiente |
 | T-06 | Dominio: plan de liquidación (RB-007) | T-05 | Alta | Tests CP-007 pasan | pendiente |
 | T-07 | Dominio: pagos y permisos (RB-008 a RB-011) | T-05 | Alta | Tests CP-008 a CP-011 pasan | pendiente |
