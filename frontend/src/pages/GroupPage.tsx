@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { api, type Group } from '../api';
+import { BalancesTab } from '../components/BalancesTab';
 import { ExpensesTab } from '../components/ExpensesTab';
 import { MembersTab } from '../components/MembersTab';
+import { PaymentsTab } from '../components/PaymentsTab';
 import { ErrorMessage, Loading, errorText } from '../components/ui';
 
 const TABS = [
   { id: 'gastos', label: 'Gastos' },
+  { id: 'saldos', label: 'Saldos' },
+  { id: 'pagos', label: 'Pagos' },
   { id: 'miembros', label: 'Miembros' },
 ] as const;
 type TabId = (typeof TABS)[number]['id'];
@@ -38,6 +42,8 @@ export function GroupPage() {
         ))}
       </div>
       {tab === 'gastos' && <ExpensesTab group={group} />}
+      {tab === 'saldos' && <BalancesTab group={group} onPaid={() => setTab('pagos')} />}
+      {tab === 'pagos' && <PaymentsTab group={group} />}
       {tab === 'miembros' && <MembersTab group={group} onChange={setGroup} />}
     </>
   );
