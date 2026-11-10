@@ -2,7 +2,13 @@
 
 Aplicación web para dividir gastos en grupos (viajes, departamentos compartidos, amigos) y saber quién le debe a quién, con la mínima cantidad de transferencias para saldar todo.
 
-> Proyecto final de Generación T. Estado: en desarrollo (ver `PLAN.md`).
+> Proyecto final de Generación T.
+
+**App publicada:** https://cuentas-claras-chi-three.vercel.app
+**API:** https://cuentas-claras-api-3wyo.onrender.com (salud: `/api/health`)
+**Repositorio:** https://github.com/biruuu123/cuentas-claras
+
+> El servidor usa el plan gratuito de Render y se duerme sin uso: la primera carga puede tardar unos 50 segundos.
 
 ## Problema
 En los grupos nadie sabe con certeza cuánto debe cada uno. Las planillas se desordenan y los redondeos generan discusiones.
@@ -53,4 +59,7 @@ cd backend && npm test
 Resultados en [`TESTING.md`](TESTING.md).
 
 ## Aplicación publicada
-Pendiente (tarea T-18).
+- Frontend: https://cuentas-claras-chi-three.vercel.app
+- Backend: https://cuentas-claras-api-3wyo.onrender.com
+
+Detalles de configuración en [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md).
