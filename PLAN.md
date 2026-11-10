@@ -25,7 +25,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 | T-08 | Esquema Prisma y migración inicial | T-02 | Alta | Migración aplica en Neon | completada |
 | T-09 | Auth: registro y login (RB-013) | T-08 | Alta | Tests CP-013 pasan | en progreso |
 | T-10 | API grupos y miembros (RB-010, RB-012) | T-09 | Alta | Tests de integración pasan | en progreso |
-| T-11 | API gastos (RB-002 a RB-005, RB-011) | T-10 | Alta | Tests de integración pasan | pendiente |
+| T-11 | API gastos (RB-002 a RB-005, RB-011) | T-10 | Alta | Tests de integración pasan | en progreso |
 | T-12 | API saldos, liquidación y pagos (RB-006 a RB-009) | T-11 | Alta | Tests de integración pasan | pendiente |
 | T-13 | Frontend: estructura, routing, login y registro | T-09 | Alta | Flujo de login funciona contra la API | pendiente |
 | T-14 | Frontend: grupos y miembros | T-10, T-13 | Alta | Crear grupo y agregar miembro | pendiente |
