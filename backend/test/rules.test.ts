@@ -2,8 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   assertValidPayment, resolvePayment, assertCanRemoveMember, assertCanEditExpense,
-} from '../../src/domain/rules.ts';
-import { computeBalances } from '../../src/domain/balances.ts';
+} from '../src/domain/rules.ts';
+import { computeBalances } from '../src/domain/balances.ts';
 
 const balances = new Map([[1, 600], [2, -300], [3, -300]]);
 

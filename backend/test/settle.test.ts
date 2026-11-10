@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { settle, type Transfer } from '../../src/domain/settle.ts';
+import { settle, type Transfer } from '../src/domain/settle.ts';
 
 function apply(balances: Map<number, number>, transfers: Transfer[]) {
   const b = new Map(balances);
