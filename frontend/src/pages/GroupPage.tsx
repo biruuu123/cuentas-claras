@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { api, type Group } from '../api';
+import { ExpensesTab } from '../components/ExpensesTab';
 import { MembersTab } from '../components/MembersTab';
 import { ErrorMessage, Loading, errorText } from '../components/ui';
 
-const TABS = [{ id: 'miembros', label: 'Miembros' }] as const;
+const TABS = [
+  { id: 'gastos', label: 'Gastos' },
+  { id: 'miembros', label: 'Miembros' },
+] as const;
 type TabId = (typeof TABS)[number]['id'];
 
 export function GroupPage() {
@@ -33,6 +37,7 @@ export function GroupPage() {
           <button key={t.id} role="tab" aria-selected={tab === t.id} onClick={() => setTab(t.id)}>{t.label}</button>
         ))}
       </div>
+      {tab === 'gastos' && <ExpensesTab group={group} />}
       {tab === 'miembros' && <MembersTab group={group} onChange={setGroup} />}
     </>
   );

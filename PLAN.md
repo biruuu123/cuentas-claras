@@ -29,7 +29,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 | T-12 | API saldos, liquidación y pagos (RB-006 a RB-009) | T-11 | Alta | Tests de integración pasan | en progreso |
 | T-13 | Frontend: estructura, routing, login y registro | T-09 | Alta | Flujo de login funciona contra la API | en progreso |
 | T-14 | Frontend: grupos y miembros | T-10, T-13 | Alta | Crear grupo y agregar miembro | en progreso |
-| T-15 | Frontend: gastos | T-11, T-14 | Alta | Alta/edición con los 3 repartos | pendiente |
+| T-15 | Frontend: gastos | T-11, T-14 | Alta | Alta/edición con los 3 repartos | en progreso |
 | T-16 | Frontend: saldos, liquidación y pagos | T-12, T-15 | Alta | Pagar y confirmar desde la UI | pendiente |
 | T-17 | Revisión de seguridad | T-12 | Alta | Checklist de AGENTS.md sin hallazgos abiertos | pendiente |
 | T-18 | Despliegue: Neon + Render + Vercel | T-16 | Alta | Flujo principal probado en producción | pendiente |
