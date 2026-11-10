@@ -3,6 +3,8 @@ import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import { useAuth } from './auth';
 import { Loading } from './components/ui';
 import { LoginPage, RegisterPage } from './pages/AuthPages';
+import { GroupPage } from './pages/GroupPage';
+import { GroupsPage } from './pages/GroupsPage';
 
 function RequireAuth({ children }: { children: ReactNode }) {
   const { user, loading } = useAuth();
@@ -33,11 +35,6 @@ function Header() {
   );
 }
 
-function Home() {
-  const { user } = useAuth();
-  return <p>Hola, {user?.name}.</p>;
-}
-
 export default function App() {
   return (
     <>
@@ -46,7 +43,8 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<PublicOnly><LoginPage /></PublicOnly>} />
           <Route path="/registro" element={<PublicOnly><RegisterPage /></PublicOnly>} />
-          <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path="/" element={<RequireAuth><GroupsPage /></RequireAuth>} />
+          <Route path="/grupos/:groupId" element={<RequireAuth><GroupPage /></RequireAuth>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
