@@ -40,7 +40,8 @@ Ver `.env.example`. El archivo `.env` nunca se sube a GitHub.
 
 | Variable | Descripción |
 |---|---|
-| `DATABASE_URL` | Conexión a PostgreSQL (Neon) |
+| `DATABASE_URL` | Conexión directa a PostgreSQL (Neon), la usa Prisma |
+| `DATABASE_URL_POOLED` | Conexión con pool de Neon (reservada para producción) |
 | `JWT_SECRET` | Secreto para firmar tokens |
 | `FRONTEND_URL` | Origen permitido por CORS |
 | `PORT` | Puerto del backend |

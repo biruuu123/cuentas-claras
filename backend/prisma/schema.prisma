@@ -1,0 +1,105 @@
+// Esquema de la base de datos de Cuentas Claras.
+// Montos siempre en centavos enteros (Int). Ver SPEC.md.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SplitType {
+  IGUAL
+  PORCENTAJE
+  EXACTO
+}
+
+enum PaymentStatus {
+  PENDIENTE
+  CONFIRMADO
+  RECHAZADO
+}
+
+model User {
+  id           Int          @id @default(autoincrement())
+  email        String       @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime     @default(now())
+  memberships  Membership[]
+  adminOf      Group[]      @relation("GroupAdmin")
+  paid         Expense[]    @relation("ExpensePayer")
+  created      Expense[]    @relation("ExpenseCreator")
+  shares       ExpenseShare[]
+  paymentsSent Payment[]    @relation("PaymentFrom")
+  paymentsRecv Payment[]    @relation("PaymentTo")
+}
+
+model Group {
+  id          Int          @id @default(autoincrement())
+  name        String
+  adminId     Int
+  admin       User         @relation("GroupAdmin", fields: [adminId], references: [id])
+  createdAt   DateTime     @default(now())
+  memberships Membership[]
+  expenses    Expense[]
+  payments    Payment[]
+}
+
+model Membership {
+  groupId  Int
+  userId   Int
+  group    Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id])
+  joinedAt DateTime @default(now())
+
+  @@id([groupId, userId])
+  @@index([userId])
+}
+
+model Expense {
+  id          Int            @id @default(autoincrement())
+  groupId     Int
+  group       Group          @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  description String
+  amount      Int
+  splitType   SplitType
+  payerId     Int
+  payer       User           @relation("ExpensePayer", fields: [payerId], references: [id])
+  createdById Int
+  createdBy   User           @relation("ExpenseCreator", fields: [createdById], references: [id])
+  createdAt   DateTime       @default(now())
+  shares      ExpenseShare[]
+
+  @@index([groupId])
+}
+
+model ExpenseShare {
+  expenseId   Int
+  userId      Int
+  amount      Int
+  // Solo para reparto PORCENTAJE: 1 % = 100 puntos básicos.
+  basisPoints Int?
+  expense     Expense @relation(fields: [expenseId], references: [id], onDelete: Cascade)
+  user        User    @relation(fields: [userId], references: [id])
+
+  @@id([expenseId, userId])
+}
+
+model Payment {
+  id         Int           @id @default(autoincrement())
+  groupId    Int
+  group      Group         @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  fromId     Int
+  from       User          @relation("PaymentFrom", fields: [fromId], references: [id])
+  toId       Int
+  to         User          @relation("PaymentTo", fields: [toId], references: [id])
+  amount     Int
+  status     PaymentStatus @default(PENDIENTE)
+  createdAt  DateTime      @default(now())
+  resolvedAt DateTime?
+
+  @@index([groupId])
+}
