@@ -32,13 +32,21 @@ frontend (Vercel)  ──HTTP/JSON──>  backend (Render)  ──>  PostgreSQL
 ```
 
 ## Ejecutar localmente
-Requisitos: Node.js 20 o superior.
+Requisitos: Node.js 20 o superior y una base PostgreSQL (por ejemplo, un proyecto gratuito de Neon).
 
 ```bash
+# Backend
 cd backend
 npm install
-cp ../.env.example .env   # completar valores
-npm test
+# crear backend/.env a partir de ../.env.example y completar los valores
+npx prisma migrate dev
+npm run dev            # API en http://localhost:3000
+
+# Frontend (otra terminal)
+cd frontend
+npm install
+# opcional: crear frontend/.env con VITE_API_URL=http://localhost:3000
+npm run dev            # web en http://localhost:5173
 ```
 
 ## Variables de entorno
@@ -54,9 +62,13 @@ Ver `.env.example`. El archivo `.env` nunca se sube a GitHub.
 
 ## Tests
 ```bash
-cd backend && npm test
+cd backend && npm test       # 62 tests: unitarios + integración contra el esquema "test" de la base
+cd frontend && npm test      # 9 tests
 ```
-Resultados en [`TESTING.md`](TESTING.md).
+Resultados y cobertura por regla en [`TESTING.md`](TESTING.md).
+
+## Documentación
+[`SPEC.md`](SPEC.md) · [`AGENTS.md`](AGENTS.md) y [`.claude/agents/`](.claude/agents) · [`PLAN.md`](PLAN.md) · [`TESTING.md`](TESTING.md) · [`docs/SEGURIDAD.md`](docs/SEGURIDAD.md) · [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md) · [`docs/AUDITORIA.md`](docs/AUDITORIA.md)
 
 ## Aplicación publicada
 - Frontend: https://cuentas-claras-chi-three.vercel.app

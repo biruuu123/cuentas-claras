@@ -34,7 +34,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 | T-17 | Revisión de seguridad | T-12 | Alta | Checklist de AGENTS.md sin hallazgos abiertos | completada |
 | T-18 | Despliegue: Neon + Render + Vercel | T-16 | Alta | Flujo principal probado en producción | completada |
 | T-19 | Informe de testing final y README con links | T-18 | Alta | TESTING.md con resultados reales | completada |
-| T-20 | Auditoría final | T-19 | Alta | Checklist de la consigna completo | pendiente |
+| T-20 | Auditoría final | T-19 | Alta | Checklist de la consigna completo | completada |
 
 ## Calendario sugerido
 - Semana 1 (9–15 nov): T-08 a T-10.
