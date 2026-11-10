@@ -7,7 +7,7 @@
     "dev": "tsx watch src/server.ts",
     "start": "tsx src/server.ts",
     "test": "node scripts/test.mjs",
-    "test:unit": "tsx --test \"test/domain/*.test.ts\"",
+    "test:unit": "tsx --test test/balances.test.ts test/errors.test.ts test/money.test.ts test/rules.test.ts test/settle.test.ts test/split.test.ts",
     "typecheck": "tsc --noEmit",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",

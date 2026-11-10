@@ -49,7 +49,7 @@ Ninguna tarea se marca completada sin tests ejecutados y aprobados.
 
 ## Testing
 - Cada regla RB-XXX tiene al menos un caso positivo y uno negativo.
-- Dominio: tests unitarios sin base de datos.
+- Dominio: tests unitarios sin base de datos (`backend/test/*.test.ts` que no empiezan con `api-`).
 - Endpoints: Supertest contra el esquema `test` de la base (se recrea en cada `npm test`; nunca toca el esquema `public`).
 - Frontend: tests de formularios y flujos principales.
 - Está prohibido borrar o saltear tests para que la suite pase.
