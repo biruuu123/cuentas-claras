@@ -9,6 +9,8 @@ import { balanceRouter, paymentRouter } from './routes/payment-routes.ts';
 
 export function createApp() {
   const app = express();
+  app.disable('x-powered-by');
+  app.set('trust proxy', 1);
   app.use(cors({ origin: config.frontendUrls }));
   app.use(express.json({ limit: '100kb' }));
 

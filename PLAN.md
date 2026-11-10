@@ -31,7 +31,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 | T-14 | Frontend: grupos y miembros | T-10, T-13 | Alta | Crear grupo y agregar miembro | en progreso |
 | T-15 | Frontend: gastos | T-11, T-14 | Alta | Alta/edición con los 3 repartos | en progreso |
 | T-16 | Frontend: saldos, liquidación y pagos | T-12, T-15 | Alta | Pagar y confirmar desde la UI | en progreso |
-| T-17 | Revisión de seguridad | T-12 | Alta | Checklist de AGENTS.md sin hallazgos abiertos | pendiente |
+| T-17 | Revisión de seguridad | T-12 | Alta | Checklist de AGENTS.md sin hallazgos abiertos | en progreso |
 | T-18 | Despliegue: Neon + Render + Vercel | T-16 | Alta | Flujo principal probado en producción | pendiente |
 | T-19 | Informe de testing final y README con links | T-18 | Alta | TESTING.md con resultados reales | pendiente |
 | T-20 | Auditoría final | T-19 | Alta | Checklist de la consigna completo | pendiente |
