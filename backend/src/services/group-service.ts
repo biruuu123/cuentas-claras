@@ -52,7 +52,7 @@ export async function addMember(groupId: number, actorId: number, email: string)
 export async function removeMember(groupId: number, actorId: number, memberId: number) {
   const group = await requireMembership(groupId, actorId);
   if (!group.memberIds.includes(memberId)) throw new DomainError('NO_ES_MIEMBRO');
-  const balances = await groupBalances(groupId, group.memberIds, true);
+  const balances = await groupBalances(groupId, group.memberIds);
   assertCanRemoveMember(group, actorId, memberId, balances.get(memberId) ?? 0);
   await prisma.membership.delete({ where: { groupId_userId: { groupId, userId: memberId } } });
   return getGroup(groupId, actorId);

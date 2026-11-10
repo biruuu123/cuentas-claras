@@ -73,7 +73,7 @@ Monedas múltiples, invitaciones por link, adjuntar comprobantes, notificaciones
 
 ### RB-008 Pago válido
 - **Descripción:** un miembro registra un pago a otro.
-- **Validaciones:** pagador y receptor distintos → si no, `PAGO_A_SI_MISMO`; el pagador debe tener saldo negativo y el receptor positivo; el monto no puede superar ni lo que debe el pagador ni lo que se le debe al receptor → si no, `PAGO_SUPERA_DEUDA`.
+- **Validaciones:** pagador y receptor distintos → si no, `PAGO_A_SI_MISMO`; el pagador debe tener saldo negativo y el receptor positivo; el monto no puede superar ni lo que debe el pagador ni lo que se le debe al receptor → si no, `PAGO_SUPERA_DEUDA`. Para este control los pagos pendientes se cuentan como hechos, así no se registra dos veces la misma deuda.
 - **Casos de prueba:** CP-008a pago de 300 de B a A se acepta; CP-008b pago de 400 rechaza; CP-008c pago a sí mismo rechaza; CP-008d pago de un acreedor rechaza.
 
 ### RB-009 Confirmación de pagos
