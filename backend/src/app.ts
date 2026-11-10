@@ -3,6 +3,7 @@ import express from 'express';
 import { config } from './config.ts';
 import { errorHandler } from './http/errors.ts';
 import { authRouter } from './routes/auth-routes.ts';
+import { groupRouter } from './routes/group-routes.ts';
 
 export function createApp() {
   const app = express();
@@ -13,6 +14,7 @@ export function createApp() {
     res.json({ ok: true });
   });
   app.use('/api/auth', authRouter);
+  app.use('/api/groups', groupRouter);
 
   app.use((_req, res) => {
     res.status(404).json({ error: { code: 'NO_ENCONTRADO', message: 'Ruta inexistente.' } });

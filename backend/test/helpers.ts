@@ -20,3 +20,14 @@ export async function createUser(name = 'Usuario'): Promise<TestUser> {
 }
 
 export const auth = (u: TestUser) => ({ Authorization: `Bearer ${u.token}` });
+
+export async function createGroup(admin: TestUser, members: TestUser[] = [], name = 'Viaje'): Promise<number> {
+  const res = await request(app).post('/api/groups').set(auth(admin)).send({ name });
+  if (res.status !== 201) throw new Error(`No se pudo crear el grupo: ${JSON.stringify(res.body)}`);
+  const id = res.body.group.id as number;
+  for (const m of members) {
+    const r = await request(app).post(`/api/groups/${id}/members`).set(auth(admin)).send({ email: m.email });
+    if (r.status !== 201) throw new Error(`No se pudo agregar miembro: ${JSON.stringify(r.body)}`);
+  }
+  return id;
+}

@@ -82,8 +82,8 @@ Monedas múltiples, invitaciones por link, adjuntar comprobantes, notificaciones
 - **Validaciones:** otro usuario → `SIN_PERMISO`; pago ya resuelto → `PAGO_YA_RESUELTO`.
 - **Casos de prueba:** CP-009a el receptor confirma; CP-009b el pagador no puede confirmar; CP-009c un pago pendiente no cambia saldos; CP-009d no se confirma dos veces.
 
-### RB-010 Quitar miembros
-- **Descripción:** el administrador puede quitar miembros.
+### RB-010 Agregar y quitar miembros
+- **Descripción:** solo el administrador agrega miembros (por email de un usuario registrado) y los quita. Errores al agregar: `USUARIO_NO_ENCONTRADO`, `YA_ES_MIEMBRO`, `SIN_PERMISO`.
 - **Validaciones:** no se quita a quien tiene saldo ≠ 0 → `SALDO_PENDIENTE`; no se quita al administrador → `ES_ADMIN`; solo el admin → `SIN_PERMISO`.
 - **Casos de prueba:** CP-010a miembro con saldo 0 se quita; CP-010b con saldo rechaza; CP-010c no admin rechaza.
 
