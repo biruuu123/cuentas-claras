@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { splitEqual, splitPercentage, splitExact } from '../src/domain/split.ts';
+import { splitEqual, splitPercentage, splitExact } from '../../src/domain/split.ts';
 
 const sum = (s: { amount: number }[]) => s.reduce((a, x) => a + x.amount, 0);
 

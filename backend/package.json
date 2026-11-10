@@ -4,19 +4,37 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "tsx --test \"test/**/*.test.ts\"",
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "test": "node scripts/test.mjs",
+    "test:unit": "tsx --test \"test/domain/*.test.ts\"",
     "typecheck": "tsc --noEmit",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.0.0",
-    "tsx": "^4.19.0",
-    "typescript": "^5.6.0",
-    "prisma": "6.16.2"
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0",
+    "typescript": "^5.6.0"
   },
   "dependencies": {
-    "@prisma/client": "6.16.2"
+    "@prisma/client": "6.16.2",
+    "prisma": "6.16.2",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "tsx": "^4.19.0",
+    "zod": "^3.24.1"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

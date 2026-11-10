@@ -9,7 +9,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 - **Auth:** JWT en header `Authorization: Bearer`, contraseñas con bcrypt.
 - **Validación:** Zod en backend; validación equivalente en formularios del frontend.
 - **Tests:** `node:test` + `tsx` para dominio; Supertest para endpoints; Vitest + Testing Library en frontend.
-- **Capas del backend:** `routes → services → domain (puro) / repositories (Prisma)`. Las reglas viven en `domain/` y no dependen de Express ni de la base.
+- **Capas del backend:** `routes → services (usan Prisma) → domain (puro)`. Las reglas viven en `domain/` y no dependen de Express ni de la base.
 
 ## Fases y tareas
 
@@ -23,7 +23,7 @@ Entrega: 31/12/2026. Estados: `pendiente`, `en progreso`, `completada`.
 | T-06 | Dominio: plan de liquidación (RB-007) | T-05 | Alta | Tests CP-007 pasan | completada |
 | T-07 | Dominio: pagos y permisos (RB-008 a RB-011) | T-05 | Alta | Tests CP-008 a CP-011 pasan | completada |
 | T-08 | Esquema Prisma y migración inicial | T-02 | Alta | Migración aplica en Neon | completada |
-| T-09 | Auth: registro y login (RB-013) | T-08 | Alta | Tests CP-013 pasan | pendiente |
+| T-09 | Auth: registro y login (RB-013) | T-08 | Alta | Tests CP-013 pasan | en progreso |
 | T-10 | API grupos y miembros (RB-010, RB-012) | T-09 | Alta | Tests de integración pasan | pendiente |
 | T-11 | API gastos (RB-002 a RB-005, RB-011) | T-10 | Alta | Tests de integración pasan | pendiente |
 | T-12 | API saldos, liquidación y pagos (RB-006 a RB-009) | T-11 | Alta | Tests de integración pasan | pendiente |

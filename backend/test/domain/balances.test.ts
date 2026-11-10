@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { assertMembers, computeBalances } from '../src/domain/balances.ts';
-import { splitEqual } from '../src/domain/split.ts';
+import { assertMembers, computeBalances } from '../../src/domain/balances.ts';
+import { splitEqual } from '../../src/domain/split.ts';
 
 const total = (m: Map<number, number>) => [...m.values()].reduce((a, b) => a + b, 0);
 

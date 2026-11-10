@@ -35,7 +35,7 @@ Ante conflicto, manda SPEC.md. Si algo no está en la SPEC, el agente se detiene
 Ninguna tarea se marca completada sin tests ejecutados y aprobados.
 
 ## Arquitectura obligatoria
-- Backend en capas: `routes/` (HTTP, validación Zod) → `services/` (orquestación, transacciones) → `domain/` (reglas puras) y `repositories/` (Prisma).
+- Backend en capas: `routes/` (HTTP, validación Zod) → `services/` (orquestación, transacciones y acceso a datos con Prisma) → `domain/` (reglas puras).
 - `domain/` no importa Express, Prisma ni nada con efectos secundarios.
 - Dinero siempre en centavos enteros. Porcentajes en puntos básicos.
 - Los errores de negocio se lanzan como `DomainError(codigo)` y se traducen a HTTP en un único middleware.
@@ -50,7 +50,7 @@ Ninguna tarea se marca completada sin tests ejecutados y aprobados.
 ## Testing
 - Cada regla RB-XXX tiene al menos un caso positivo y uno negativo.
 - Dominio: tests unitarios sin base de datos.
-- Endpoints: Supertest contra una base de test separada.
+- Endpoints: Supertest contra el esquema `test` de la base (se recrea en cada `npm test`; nunca toca el esquema `public`).
 - Frontend: tests de formularios y flujos principales.
 - Está prohibido borrar o saltear tests para que la suite pase.
 

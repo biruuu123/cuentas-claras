@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { assertValidAmount } from '../src/domain/money.ts';
+import { assertValidAmount } from '../../src/domain/money.ts';
 
 test('RB-001 CP-001a acepta montos válidos', () => {
   assert.doesNotThrow(() => assertValidAmount(1));

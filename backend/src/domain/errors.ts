@@ -10,7 +10,15 @@ export type DomainErrorCode =
   | 'SIN_PERMISO'
   | 'PAGO_YA_RESUELTO'
   | 'SALDO_PENDIENTE'
-  | 'ES_ADMIN';
+  | 'ES_ADMIN'
+  | 'EMAIL_EN_USO'
+  | 'CONTRASENA_CORTA'
+  | 'CREDENCIALES_INVALIDAS'
+  | 'NO_AUTENTICADO'
+  | 'NO_ENCONTRADO'
+  | 'USUARIO_NO_ENCONTRADO'
+  | 'YA_ES_MIEMBRO'
+  | 'VALIDACION';
 
 export class DomainError extends Error {
   constructor(public readonly code: DomainErrorCode, message?: string) {
